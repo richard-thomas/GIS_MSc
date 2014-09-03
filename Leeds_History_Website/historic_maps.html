@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="historic_map_setup.js"></script>
+      <link rel="stylesheet" media="all" href="map_style.css" type="text/css">
+      <title>Historic Maps</title>
+</head>
+<body onload="initialize()" style="background-color:#EEEECC;">
+   
+   <div class="historicMapPage">
+      <h2 style="text-align: center;">Comparing Historic Maps</h2>   
+     Select map overlay (mouse clicking on the map turn overlays on/off):
+     <p><input type="radio" name="pType" onclick="selectMap(0);" checked="true">
+     1841 Ordnance Survey First Series 1:63360 (1805-1869)</p>
+     <p><input type="radio" name="pType" onclick="selectMap(1);">
+     1866 Bartholomew (published in The Imperial Gazetteer of England & Wales) </p>
+     <p><input type="radio" name="pType" onclick="selectMap(2);">
+     1903 Ordnance Survey of England and Wales Revised New Series 1:253440 (1902-5)</p>
+     <p><input type="radio" name="pType" onclick="selectMap(3);">
+     1945 Ordnance Survey New Popular Edition 1:63360 (1945-8)</p>
+   
+   <div class="histMap" id="map_canvas">
+   </div>
+   
+   <h3>Acknowledgements</h3>
+   <p>This work incorporates historical material provided by the Great Britain
+Historical GIS Project and the University of Portsmouth through their web site
+<a href="http://www.VisionofBritain.org.uk">A Vision of Britain through Time</a>.
+   Bartholomew map provided by <a href="http://www.ancestryimages.com/">Ancestry Images</a>
+   free image archive of historical prints.</p>
+   
+   <h3>Other historic map resources and links</h3>
+   
+   <ul><li>OpenStreetMap OOC (Out Of Copyright) - http://ooc.openstreetmap.org/
+   streamable
+- Including some historical (out of copyright) maps, particularly
+  OS NPE 1:50k (1945-55): "New Popular Edition"
+   http://wiki.openstreetmap.org/wiki/Out-of-copyright_maps</li>
+      <li>National Library Scotland OS NPE 50k Maps
+http://maps.nls.uk/os/6inch-england-and-wales/index.html
+- only streamable, but designed to be used in mashup</li>
+      <li>http://www.visionofbritain.org.uk/maps/?download=true
+- free download of original map sheets
+</li>
+      <li>http://www.ponies.me.uk/maps/osmap.html - a collection of old OS maps,
+      viewable online with a variable-transparency google map overlay on top.</li>
+      <li>Ordnance Survey OpenData
+http://www.ordnancesurvey.co.uk/business-and-government/products/opendata-products.html
+- free (downloadable) data from OS
+- includes APIs for website/app map inclusion
+</li>
+      <li>
+Ordnance Survey OpenSpace
+API allows for access to high quality OS explorer mapping too:
+http://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/api/index.html
+- embedded streaming (only) for web-pages & mobile apps
+- can include high quality 1:50k rasters
+</li>
+
+      <li>http://www.tracksintime.wyjs.org.uk/
+- free online access to the historic tithe maps which together span the modern
+  Leeds Metropolitan District.
+</li>
+   <li>  http://www.bl.uk/onlinegallery/onlineex/firemaps/england/yorkshire/mapsu145ubu14u1ufs001r.html
+- British Library Insurance Plan of Leeds (1902)
+- gives indication of land use</li> 
+   </ul>
+<h3>Academic Research only</h3>
+Digimap (EDINA) http://digimap.edina.ac.uk/: a large collection of historic Ordnance Survey
+Maps are available:
+<ul>
+   <li>Town plans at scales 1:500, 1:528 and 1:1056: 1st Edition (1848 - 1908),
+   2nd Edition (1864 - 1911), 3rd Edition (1893 - 1923), 4th Edition (1935 - 1939).</li>
+   <li>County Series (1:10560): 1st Edition (1849 - 1899), 1st Revision (1888 - 1914),
+   2nd Revision (1900 - 1949), 3rd Revision (1922 - 1969).</li>
+   <li>County Series (1:2500): 1st Edition (1854 - 1901), 1st Revision (1893 - 1915),
+   2nd Revision (1906 - 1939), 3rd Revision (1924 - 1949).</li>
+   <li>National Grid (1943-1996) at several scales: 1:1250 (1943-1993), 1:2500 (1943-1995),
+   1:10000 (1969-1996), 1:10560 (1948-1976)</li>
+</ul>
+However access is restricted to academics in higher education institutes for research and cannot be published on the web.
+   </div>
+
+</body>
+</html>

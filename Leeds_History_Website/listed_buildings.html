@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="jscoord-1.1.1.js"></script>
+      <script type="text/javascript" src="buildings_data.js"></script>
+      <script type="text/javascript" src="buildings_map_setup.js"></script>
+      <link rel="stylesheet" media="all" href="map_style.css" type="text/css">
+      <title>Leeds Listed Buildings and Monuments</title>
+</head>
+<body onload="initialize()">
+
+<div class="leftBox">
+
+   <!-- Listed Building Key Panel (on left, at top) -->
+   <div class="key">
+      <h3 style="color:#cc0000; border:groove; text-align:center">Leeds Listed Buildings and Monuments</h3>
+      <p><b>KEY:</b> Listed Building state according to Leeds Civic Trust 2014
+         <a href="http://www.leedscivictrust.org.uk/uploads/leeds/mainsite/downloads/PDFs/Heritage/HAR%20Lists/HAR%20List-Apr%2014.pdf"
+            target="_blank"> (pdf)</a>:</p>
+     <p><img src="red-dot.png" width=20 alt="Red Marker">
+         "Urgent risk (immediate structural danger)"</p>
+      <p><img src="yellow-dot.png" width=20 alt="Yellow Marker">
+         "At Risk (vulnerable through neglect, decay and inoccupation)"</p>
+      <p><img src="green-dot.png" width=20 alt="Green Marker">
+         Other Listed Building or Monument</p>
+   </div>
+
+  <!-- Listed Building Filter Key Panel (on left, in middle) -->
+   <div class="filter">
+      <h3>Filter by estimated construction date</h3>
+      <p>Century / Period: 
+      <input type="button" value="17C"
+         onclick="yearFrom.value = '1600'; yearTo.value = '1699'"/>
+      <input type="button" value="18C"
+         onclick="yearFrom.value = '1700'; yearTo.value = '1799'"/>
+     <input type="button" value="19C"
+         onclick="yearFrom.value = '1800'; yearTo.value = '1899'"/>
+      <input type="button" value="20C"
+         onclick="yearFrom.value = '1900'; yearTo.value = '1999'"/>
+      <input type="button" value="Early Victorian"
+         onclick="yearFrom.value = '1837'; yearTo.value = '1860'"/>
+      <input type="button" value="Late Victorian"
+         onclick="yearFrom.value = '1860'; yearTo.value = '1901'"/>
+      <input type="button" value="Edwardian"
+         onclick="yearFrom.value = '1900'; yearTo.value = '1918'"/>
+      <input type="button" value="(No Filter)"
+         onclick="yearFrom.value = '0000'; yearTo.value = '2014'"/>
+      </p>
+      
+      <!-- <form name="input" action="demo_form_action.asp" method="get"> -->
+      <p>Year from: <input type="text" size=2 maxlength=4  id="yearFrom" value="0000"> to <input type="text" size=2 maxlength=4 id="yearTo" value="2014">
+      <input type="button" value="Update Map" onclick="updateMarkers();"></p>
+      <!-- </form> -->
+      <p>Note: English Heritage often have only recorded (very) wide ranges for estimated construction dates.</p>
+   </div>
+  
+    <!-- Listed Building Query Panel (on left, at bottom) -->
+   <div class="query">
+      <h3>Find building by name</h3>
+      <p><input type="text" size=27 id="searchString">
+      <input type="submit" value="Search" onclick="buildingSearch(searchString.value);"></p>
+      <div id="hotlinks">.... Search Results ....</div>
+   </div>
+</div>
+
+ 
+<div class="rightBox">
+   <!-- Interactive map below at top on RHS -->
+   <div class="listBldMap" id="map_canvas">
+   </div>
+</div>
+   
+
+</body>
+</html>

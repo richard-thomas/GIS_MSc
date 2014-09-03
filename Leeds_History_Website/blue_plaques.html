@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript" src="jscoord-1.1.1.js"></script>
+      <script type="text/javascript" src="blueplaques_data.js"></script>
+      <script type="text/javascript" src="map_setup_plaques.js"></script>
+      <link rel="stylesheet" media="all" href="plaques_style.css" type="text/css">
+      <title>Leeds Blue Plaques</title>
+</head>
+<body onload="initialize()">
+   
+   <!-- Initially just put introduction into Information Panel on LHS -->
+   <div id="infobox" class="info">
+      <h3>Introduction: The Leeds Blue plaques Scheme</h3>
+      <p></p>"<a href="http://www.leedscivictrust.org.uk/?idno=1053">Leeds Civic Trust</a>
+      set up its Historic Plaques Scheme in 1987 to promote public
+      awareness of the heritage of the city of Leeds. The first blue plaque,
+      which marks Burley Bar - one of the boundaries of the medieval town - was
+      unveiled in 1987. By January 2008, 110 plaques had been erected. A record of the history behind,
+      and background to, the first 66 plaques can be found in the
+      <a href="http://www.leedscivictrust.org.uk/?idno=1100">Blue Plaques of Leeds</a>
+      publication available from the Leeds Civic Trust bookshop." (Source: OpenPlaques.org)</p>
+      <p>The interactive map on this website provides information on all the plaques unveiled
+      up to September 2007. It was not possible to get the precise location of some of the plaques.
+      However, the information for these is accessible via the markers "( ! )" lined up along the bottom
+      of the map. Details of some of the more recent plaques are available at
+      <a href="http://openplaques.org/organisations/leeds_civic_trust">OpenPlaques.org</a></p>
+   
+      <h3>Acknowledgements</h3>
+      <ul>
+         <li>John Stillwell and Rachael Unsworth: Original dataset for this project.</li>
+         <li><a href="https://www.flickr.com/photos/noii/sets/72157624096858356/">
+         Ben Dalton @ Flickr</a>: Photos (Public Domain Dedication Licence: CC0 1.0)</li>
+         <li><a href="http://openplaques.org/organisations/leeds_civic_trust">OpenPlaques.org</a>:
+         Missing Location Data and photo links (Public Domain Dedication Licence 1.0),
+         retrieved via a call to retrieve Leeds region data via their
+         <a href="http://openplaques.org/plaques.xml?box=[53.854552,-1.64370],[53.755207,-1.422150]&limit=500">
+         XML API</a></li>.
+      </ul>
+      <center><img src="https://farm3.staticflickr.com/2522/3841184816_f8bf17877f_m.jpg"></center>
+
+   </div>
+   
+   <!-- Permanent Header at top RHS -->
+   <div id="hdr" class="header">
+     <center><h1>LEEDS BLUE PLAQUES</h1></center>
+     
+     <a href="blue_plaques.html">(Back to Introduction)</a><br>
+     Plaque Type:
+     <input type="radio" name="pType" onclick="updateMarkers(2);">Person
+     <input type="radio" name="pType" onclick="updateMarkers(1);">Building
+     <input type="radio" name="pType" checked=true onclick="updateMarkers(3);">Both
+     <input type="checkbox" checked=true
+            onclick="showUnknown = !showUnknown; updateMarkers(markerMask);">Show Unknown locations<br>
+   </div>
+   
+   <!-- Interactive map below header on RHS -->
+   <div class="gmap" id="map_canvas">
+   </div>
+   
+</body>
+</html>

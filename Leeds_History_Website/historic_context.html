@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+      <link rel="stylesheet" media="all" href="map_style.css" type="text/css">
+      -->
+      <title>Leeds: Historic Context</title>
+</head>
+<body style="background-color:#cc6666;">
+   
+   <h2>Leeds: Historic Context</h2>
+   
+   Useful Resources and Interesting Links:
+   <ul>
+      <li><a href="http://www.victorianweb.org/art/architecture/leeds/index.html">
+         VictorianWeb:</a> invaluable history resource</li>
+      <li><a href="http://www.visionofbritain.org.uk/">Visions of Britain:</a>
+   good source for lots of data</li>
+      <li><a href="http://www.leedscivictrust.org.uk/">Leeds Civic Trust</a></li>
+      <li><a href="http://www.leodis.org/discovery/">Discovering Leeds (Leodis):</a>
+      invaluable history resource</li>
+      <li><a href="http://www.imagesofengland.org.uk/">Images of England (English Heritage)</a></li>
+</li><li>Leodis historic photos: 
+   <select name="ddlLocations" id="ddlLocations">
+      <option value="0">Select Area</option>
+      <option value="103">Aberford</option>
+      <option value="1">Adel</option>
+      <option value="192">Allerton Bywater</option>
+      <option value="2">Alwoodley</option>
+      <option value="3">Armley</option>
+      <option value="106">Arthington</option>
+      <option value="4">Austhorpe</option>
+      <option value="5">Bank</option>
+      <option value="187">Bardsey</option>
+      <option value="107">Barwick in Elmet</option>
+      <option value="6">Beeston</option>
+      <option value="7">Belle Isle</option>
+      <option value="113">Boston Spa</option>
+      <option value="118">Bramham</option>
+      <option value="8">Bramhope</option>
+      <option value="9">Bramley</option>
+      <option value="10">Burley</option>
+      <option value="11">Burmantofts</option>
+      <option value="12">Buslingthorpe</option>
+      <option value="13">Calverley</option>
+      <option value="96">Carlton</option>
+      <option value="92">Castleford</option>
+      <option value="14">Chapel Allerton</option>
+      <option value="15">Chapeltown</option>
+      <option value="111">Churwell</option>
+      <option value="16">City Centre</option>
+      <option value="116">Clifford</option>
+      <option value="114">Collingham</option>
+      <option value="104">Colton</option>
+      <option value="17">Cookridge</option>
+      <option value="81">Cottingley</option>
+      <option value="18">Cross Gates</option>
+      <option value="19">Cross Green</option>
+      <option value="97">Dewsbury</option>
+      <option value="22">Drighlington</option>
+      <option value="109">East Ardsley</option>
+      <option value="119">East Keswick</option>
+      <option value="20">Eccup</option>
+      <option value="24">Farnley</option>
+      <option value="25">Farsley</option>
+      <option value="26">Garforth</option>
+      <option value="27">Gildersome</option>
+      <option value="28">Gipton</option>
+      <option value="29">Gledhow</option>
+      <option value="30">Guiseley</option>
+      <option value="31">Halton</option>
+      <option value="32">Harehills</option>
+      <option value="105">Harewood</option>
+      <option value="100">Harrogate</option>
+      <option value="102">Hawksworth LS20</option>
+      <option value="101">Hawksworth LS5</option>
+      <option value="33">Headingley</option>
+      <option value="34">Holbeck</option>
+      <option value="35">Holt Park</option>
+      <option value="36">Horsforth</option>
+      <option value="37">Hunslet</option>
+      <option value="38">Hyde Park</option>
+      <option value="202">Ilkley</option>
+      <option value="39">Killingbeck</option>
+      <option value="40">Kippax</option>
+      <option value="182">Kirk Deighton</option>
+      <option value="41">Kirkstall</option>
+      <option value="42">Knostrop</option>
+      <option value="43">Lawnswood</option>
+      <option value="44">Leylands</option>
+      <option value="45">Lincoln Green</option>
+      <option value="188">Linton</option>
+      <option value="46">Little London</option>
+      <option value="47">Little Woodhouse</option>
+      <option value="85">Lofthouse</option>
+      <option value="83">Mabgate</option>
+      <option value="48">Meanwood</option>
+      <option value="99">Menston</option>
+      <option value="91">Methley</option>
+      <option value="193">Micklefield</option>
+      <option value="49">Middleton</option>
+      <option value="50">Moor Allerton</option>
+      <option value="51">Moortown</option>
+      <option value="52">Morley</option>
+      <option value="53">Newlay</option>
+      <option value="54">Newtown</option>
+      <option value="55">Oakwood</option>
+      <option value="56">Osmondthorpe</option>
+      <option value="57">Otley</option>
+      <option value="86">Oulton</option>
+      <option value="117">Pool</option>
+      <option value="58">Potternewton</option>
+      <option value="59">Pudsey</option>
+      <option value="98">Quarry Hill</option>
+      <option value="60">Rawdon</option>
+      <option value="94">Richmond Hill</option>
+      <option value="89">Robin Hood</option>
+      <option value="61">Rodley</option>
+      <option value="62">Rothwell</option>
+      <option value="63">Roundhay</option>
+      <option value="183">Scarcroft</option>
+      <option value="112">Scholes</option>
+      <option value="64">Seacroft</option>
+      <option value="65">Shadwell</option>
+      <option value="66">Sheepscar</option>
+      <option value="90">Stanley</option>
+      <option value="67">Stanningley</option>
+      <option value="95">Stourton</option>
+      <option value="82">Swarcliffe</option>
+      <option value="68">Swillington</option>
+      <option value="69">Swinnow</option>
+      <option value="70">Temple Newsam</option>
+      <option value="184">Thorner</option>
+      <option value="115">Thorp Arch</option>
+      <option value="87">Thorpe</option>
+      <option value="108">Tingley</option>
+      <option value="79">Unknown</option>
+      <option value="71">Weetwood</option>
+      <option value="110">West Ardsley</option>
+      <option value="72">West Park</option>
+      <option value="73">Wetherby</option>
+      <option value="80">Whinmoor</option>
+      <option value="74">Whitkirk</option>
+      <option value="75">Woodhouse</option>
+      <option value="88">Woodlesford</option>
+      <option value="76">Wortley</option>
+      <option value="77">Yeadon</option>
+      <option value="78">York Road</option>
+
+   </select>
+   <script>
+      function gotoPhotos(areaCode) {
+         photoStr="http://www.leodis.net/searchResults.aspx?LOCID=" + areaCode +
+         "&DECADE=0&YEAR=&KEYWORDS=&KEYWORDS2=&ANDOR2=And&KEYWORDS3=&ANDOR3=And" +
+         "&RECSPAGE=5&IMG=0&VIEW=2&CURRPAGE=1&RESID=&PUBID=0";
+         
+         // open photos in another window
+         window.open(photoStr, '_blank');
+      }
+   </script>
+   <input type="button" value="Get photos" onclick="gotoPhotos(ddlLocations.value);">
+</li>
+
+<li><a href="http://www.leedstrinity.ac.uk/departments/history/victorian_studies/whyleeds/pages/architecture.aspx">
+   Leeds Trinity Victorian studies</a> - Brief Leeds Architecture info,
+   a good pointer to some of key textbooks</li>
+
+
+   </ul>
+
+</body>
+</html>

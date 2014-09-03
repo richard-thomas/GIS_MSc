@@ -1,0 +1,38 @@
+body {
+   height: 800px;
+   background-color: #DDDDFF;
+   color: black;
+   font-size: small;
+   font-family: Arial,Helvetica,san-serif;
+}
+
+/* Information Panel (on left) */
+.info {
+   height: 780px;
+   min-width: 400px;
+   width: 50%;
+   float: left;
+   margin: 5px;
+   margin-right: 15px;
+   padding: 10px;
+   background-color: #DDE4DD;
+   border: thin dotted #336644;
+   overflow: auto;
+}
+
+/* Rendered Google Map (on right) */
+.gmap {
+   min-width: 200px;
+   width: auto;
+   height: 700px;
+   margin: 5px;
+   border: thin solid black;
+}
+
+/* Header/Control Panel (on top right) */
+.header {
+   height: 100px;
+   min-width: 200px;
+   width: auto;
+   background-color: transparent;
+}
