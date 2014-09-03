@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ToDoListOrganizer</Name>
+  <AddInID>default</AddInID>
+  <Description>TODO List Handler (Map Document-specific)</Description>
+  <Version>1.0</Version>
+  <Image></Image>
+  <Author>Richard Thomas</Author>
+  <Company>University of Leeds</Company>
+  <Date>Sun Mar 16 16:38:11 GMT 2014</Date>
+  <Targets>
+    <Target name="Desktop" version="10.0"/>
+  </Targets>
+  <AddIn language="JAVA" library="TaskListOrg.jar">
+    <ArcMap>
+      <Commands>
+        <Button caption="New" category="TODO List Organizer" class="uk.ac.leeds.geog.gy13rjt.todo.NewTaskButton" id="uk.ac.leeds.geog.gy13rjt.todo.newtaskbuttonid" image="image/Plus.gif" message="Clears edit box, ready to type in text for a new task" tip="Prepare to enter new task">
+          <Help heading="Add New Task">Press ['+'] to start entering a new task. Press 'Enter' to confirm the task. Any other action will cancel. Pressing Delete ['X'] will clear the text field.</Help>
+        </Button>
+        <Button caption="Del" category="TODO List Organizer" class="uk.ac.leeds.geog.gy13rjt.todo.DelTaskButton" id="uk.ac.leeds.geog.gy13rjt.todo.deltaskbuttonid" image="image/X.gif" message="Delete selected task from task list" tip="Delete Task">
+          <Help heading="Delete Task">This will delete currently selected task, or if no task is selected this will just clear the text field.</Help>
+        </Button>
+        <ComboBox caption="Pull-down Task List" category="TODO List Organizer" class="uk.ac.leeds.geog.gy13rjt.todo.TaskListComboBox" editable="true" hintText="(Type new task &amp; press enter)" id="uk.ac.leeds.geog.gy13rjt.todo.TaskListComboBox" itemSizeString="1234567890123456789012345678901234567890123456789012345678901234567890" message="Keep track of document-specific tasks here" rows="20" sizeString="12345678901234567890123456789012345678901234567890" tip="TODO List Handler">
+          <Help heading="Task Items Drop-down List ">To delete or modify a task item, first select it using the drop down list. The full task list can be viewed (and copied and pasted from within) the File->Properties dialog. Note that the drop-down list must be dismissed before 'Enter' can add a new task.</Help>
+        </ComboBox>
+      </Commands>
+      <Toolbars>
+        <Toolbar caption="TODO List Toolbar" id="uk.ac.leeds.geog.gy13rjt.todo.tasklisttoolbar" showInitially="true">
+          <Items>
+            <Button refID="uk.ac.leeds.geog.gy13rjt.todo.newtaskbuttonid"/>
+            <Button refID="uk.ac.leeds.geog.gy13rjt.todo.TaskListComboBox"/>
+            <Button refID="uk.ac.leeds.geog.gy13rjt.todo.deltaskbuttonid"/>
+          </Items>
+        </Toolbar>
+      </Toolbars>
+      <Extensions>
+        <Extension autoLoad="true" class="uk.ac.leeds.geog.gy13rjt.todo.PersistentExtensionAddIn" id="uk.ac.leeds.geog.gy13rjt.todo.persistentextensionaddinid" productName="Persistent Data Extension" showInExtensionDialog="true"/>
+      </Extensions>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
