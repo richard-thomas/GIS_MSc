@@ -10,7 +10,7 @@ This should automatically install itself and appear when ArcMap is fired up.
 If not, simply select "TODO List Toolbar" from the "Customize"->"Addins" menu.
 
 Full documentation is provided in associated Javadoc:
-   http://richard-thomas.github.io/GIS_MSc/CommuterSim/JavaDoc/index.html
+   http://richard-thomas.github.io/GIS_MSc/TaskList/JavaDoc/index.html
 
 The source files are as follows:
 
