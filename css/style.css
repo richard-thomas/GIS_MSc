@@ -16,12 +16,15 @@ body {
     float:right;
     width:70px;
     height:140px;
+    border-width: 0;
 }
 
 #LinkedIn_profile {
     float:left;
     width:160px;
-    height:25px
+    height:25px;
+    border-width: 0;
+
 }
 
 #hdr_text {
