@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html style="width:650px;">
+    <head>
+        <title>Cycle Commuting Analysis of Bristol</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+           .caption {
+              text-align: center;
+              font-size: 0.9em;
+           }
+           .map {
+               border:1px solid blue;
+           }
+        </style>
+    </head>
+    <body>
+        <h2>Cycle Commuting Analysis of Bristol</h2>
+        <p><em>by Richard Thomas</em></p>
+        <div style="float:right;padding-left:10px;">
+            <a href="img/AvTime_to_Bike_Commute.png">
+                <img src="img/AvTime_to_Bike_Commute_thumb.png"
+                     alt="Average time to cycle commute"
+                     class="map"></a>  
+            <p class="caption">Bristol: Typical cycle commute time
+                </p>
+        </div>
+        <p>For my MSc dissertation, I wanted to investigate whether analysis of
+            realistic cycling routes for the daily commute of a
+            representatively large sample of a city's population could give
+            improved predictors over existing models of the proportion of people
+            who cycle.
+            From 2011 Census data, I extracted commuting origin/destination data
+            for everyone in the Bristol built-up area in its most detailed form
+            of aggregation (typically accurate to within 500m).
+            I wanted to generate plausible cycling routes for these commutes,
+            then for each of these routes to evaluate metrics (distance, hills,
+            cycle paths, traffic). As census data is available giving the
+            proportion of commuters living in each small area who cycle,
+            multi-variate correlation could then be used to estimate the
+            influence of these routing metrics, together with other
+            known influential population measures taken from the census.
+        </p>
+
+        <p>So how best to perform this cycle routing and evaluate suitable
+            metrics? On both these counts the
+            <a href="http://www.cyclestreets.net/api/v1/journey/">
+                CycleStreets Journey Planner API</a>
+            proved invaluable (and made my MSc dissertation a feasible proposition!)
+            I had considered using an existing open
+            source routing engine (such as
+            <a href="http://pgrouting.org/">pgRouting</a> or
+            <a href="https://github.com/graphhopper/graphhopper/">
+                Graphhopper</a>) operating
+            on an extract of the OpenStreetMap database as this would allow me
+            to directly query tags on each node of a route. However the
+            complexity in interpreting OpenStreetMap cycle-related tags is quite
+            daunting (as documented
+            <a href="http://www.cyclestreets.net/journey/help/osmconversion/">
+                here on CycleStreets.net</a>).
+            Because the API returned not just the route, but details of
+            routed distance, duration, "quietness", estimated calories required
+            and spot heights, useful metrics could be derived quickly from the
+            JSON data using just Python scripts. It would have been good to
+            more directly quantify dedicated cycle infrastructure along routes:
+            although the "quietness" measure included this, it
+            also included road traffic expectations. Given more time, this
+            could have been done by using the actual route coordinates to
+            interrogate the OpenStreetMap or CycleStreets databases, though this
+            was complicated by API-returned points being only in
+            latitude/longitude format rather than database node/segment numbers.
+            In order to limit the amount of data to be processed (and the load
+            on the CycleStreets API server), routing was limited to the 4 most
+            popular routes from each area, although this still required
+            nearly 16000 routes to be generated and analyzed!
+        </p>
+        <div style="float:left;padding-right:20px;">    
+            <a href="img/summed_routing_overview.png">
+                <img src="img/summed_routing_overview_thumb.png"
+                     alt="Summed routes (detail)"
+                     class="map"></a>
+            <p class="caption">Summed cycle commute routes (Overview)</p>
+        </div>
+        <p>The most notable results of these <em>new</em> routing-based metrics
+            (i.e. beyond the key predictor of crow-fly distance) were as follows:</p>
+        <ul>
+            <li><strong>Directness</strong> (Crow-fly / Routed Distance):
+            strong indication that cycling was less popular if a reasonable
+            ("balanced") cycling route was particularly circuitous.</li>
+            <li><strong>Max Height Increase</strong>
+                (Maximum of sum of all hill climbs for outward or return direction):
+                strong indication (as might be expected) that hills were a
+                strong detractor. This metric was
+                only developed after the MSc was completed; interestingly, in
+                the MSc analysis, the related metric of <em>Effort Ratio</em>
+                (calories / distance) was not a statistically
+                significant indicator.</li>
+            <li><strong>Traffic Exposure</strong> (Inverse of "Quietness"):
+                Although this metric visually gives a good indication of
+                cycling routes along busy roads and/or away from dedicated
+                cycle infrastructure it was not a statistically significant
+                predictor of cycling. Although not conclusive, this supports
+                other research showing that cyclists are more sensitive to
+                time taken than to pleasantness or safety when it concerns their
+                daily commute (priorities may be different for a leisure ride).</li>
+        </ul>
+        <div style="float:right;padding-left:10px;">
+            <a href="img/summed_routing_detail.png" target="_blank">
+                <img src="img/summed_routing_detail_thumb.png"
+                     alt="Summed routes (street level detail)"
+                     class="map"></a>
+            <p class="caption">Street level detail (OpenCycleMap)</p>
+        </div>
+        <p>More details of the analysis are available in the
+            <a href="http://richard-thomas.github.io/GIS_MSc/">
+                full dissertation (or short synopsis)</a>.
+            Only after the MSc was completed was detailed 2011 census
+            origin/destination data (table WF02 for OA/WZ) made available (and
+            then only to academics for specific projects). Thus for the MSc,
+            synthetic data was generated based on (publicly available) census
+            data. However, a later reworking of the full analysis using the new
+            WF02 census data gave very similar results showing that lack of
+            public access to detailed statistics need not be a serious impediment
+            to analysis. Beyond the key MSc analysis, an interesting spin-off
+            of all the cycle routing was the development of maps (see right and
+            below)
+            that sums the 4 most popular commute routes from the centroid of
+            each census <em>Output Area</em>, giving a good indication of the
+            number of cyclists along individual streets if all these people were
+            to commute by bicycle.
+        </p>
+         <p>Thanks again to CycleStreets for making
+            the API available to enable this research project. Data
+            processing was done in Python and SPSS with additional processing
+            and map rendering in the open source QGIS package.</p>
+    </body>
+</html>
