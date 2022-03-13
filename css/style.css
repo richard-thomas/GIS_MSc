@@ -1,21 +1,43 @@
 html {
     background-color: #eee;
+    font-size: 16px;
 }
 body {
     background-color:#ffffcc;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    margin: 0;
 }
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
     body {
         margin: auto;
         max-width: 60em;
     }
 }
-p, h3, h4 {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+p {
+    margin-left: 1.0rem;
+    margin-right: 1.0rem;
+    text-align: justify;
+}
+ul {
+    margin-top: 0.75rem;
 }
 li {
-    margin-right: 0.5em;
+    margin-right: 2.0rem;
+    text-align: justify;
+}
+h3 {
+    font-size: 1.25rem;
+    margin-left: 1.0rem;
+    margin-right: 1.0rem;
+    margin-top: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+h4 {
+    font-size: 1.125rem;
+    margin-left: 1.0rem;
+    margin-right: 1.0rem;
+    margin-top: 1.3rem;
+    margin-bottom: 0.75rem;
 }
 
 /* Header Panel */
@@ -23,8 +45,8 @@ li {
     background-image: url("Ingleborough_banner.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px 15px 10px 10px;
-    height: 218px;
+    padding: 10px;
+    height: 228px;
     color: whitesmoke;
 }
 
@@ -36,21 +58,19 @@ li {
 }
 
 #LinkedIn_profile {
-    float:left;
     width:160px;
     height:25px;
     border-width: 0;
 
 }
 #hdr_text {
-    padding-top: 60px;
-    padding-bottom: 30px;
+    position: relative;
+    top: 24px;
 }
 
 #hdr_text p {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-shadow: 2px 2px #000000;
     margin-bottom: 5px;
     margin-top: 0;
@@ -58,15 +78,15 @@ li {
 
 .profile-link {
     position: absolute;
-    top: 206px;
-    margin-top: 0;
+    top: 212px;
+    margin: 0;
 }
 .profile-link a {
-    padding: 0.3em;
+    padding-top: 0.4em;
+    padding-bottom: 0.3em;
     padding-left: 1.0em;
     padding-right: 1.0em;
     border-radius: 0.8em;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.75em;
     box-shadow: 0px 0px 10px #000000;
     color: black;
